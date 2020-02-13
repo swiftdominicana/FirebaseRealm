@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,11 @@
 		EE4FE1B723F5F5F800DD340E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE4FE1B523F5F5F800DD340E /* Main.storyboard */; };
 		EE4FE1B923F5F5F900DD340E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE4FE1B823F5F5F900DD340E /* Assets.xcassets */; };
 		EE4FE1BC23F5F5F900DD340E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE4FE1BA23F5F5F900DD340E /* LaunchScreen.storyboard */; };
+		EE4FE1C823F5F77B00DD340E /* RealmStudentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1C523F5F77B00DD340E /* RealmStudentRepository.swift */; };
+		EE4FE1C923F5F77B00DD340E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1C623F5F77B00DD340E /* Repository.swift */; };
+		EE4FE1CA23F5F77B00DD340E /* FirebaseStudentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1C723F5F77B00DD340E /* FirebaseStudentRepository.swift */; };
+		EE4FE1CC23F5F78200DD340E /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1CB23F5F78200DD340E /* Student.swift */; };
+		EE4FE1D023F5F8C300DD340E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE4FE1CF23F5F8C300DD340E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		EE4FE1B823F5F5F900DD340E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE4FE1BB23F5F5F900DD340E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE4FE1BD23F5F5F900DD340E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE4FE1C523F5F77B00DD340E /* RealmStudentRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmStudentRepository.swift; sourceTree = "<group>"; };
+		EE4FE1C623F5F77B00DD340E /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		EE4FE1C723F5F77B00DD340E /* FirebaseStudentRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseStudentRepository.swift; sourceTree = "<group>"; };
+		EE4FE1CB23F5F78200DD340E /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		EE4FE1CF23F5F8C300DD340E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +58,6 @@
 				2896E4A88D540E7F659546D0 /* Pods-FirebaseRealm.debug.xcconfig */,
 				E8561417074E00A3A29F4955 /* Pods-FirebaseRealm.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +90,9 @@
 		EE4FE1AE23F5F5F800DD340E /* FirebaseRealm */ = {
 			isa = PBXGroup;
 			children = (
+				EE4FE1CF23F5F8C300DD340E /* GoogleService-Info.plist */,
+				EE4FE1C423F5F76A00DD340E /* Repositories */,
+				EE4FE1C323F5F76200DD340E /* Models */,
 				EE4FE1AF23F5F5F800DD340E /* AppDelegate.swift */,
 				EE4FE1B123F5F5F800DD340E /* SceneDelegate.swift */,
 				EE4FE1B323F5F5F800DD340E /* ViewController.swift */,
@@ -90,6 +102,24 @@
 				EE4FE1BD23F5F5F900DD340E /* Info.plist */,
 			);
 			path = FirebaseRealm;
+			sourceTree = "<group>";
+		};
+		EE4FE1C323F5F76200DD340E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EE4FE1CB23F5F78200DD340E /* Student.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EE4FE1C423F5F76A00DD340E /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				EE4FE1C623F5F77B00DD340E /* Repository.swift */,
+				EE4FE1C723F5F77B00DD340E /* FirebaseStudentRepository.swift */,
+				EE4FE1C523F5F77B00DD340E /* RealmStudentRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE4FE1BC23F5F5F900DD340E /* LaunchScreen.storyboard in Resources */,
+				EE4FE1D023F5F8C300DD340E /* GoogleService-Info.plist in Resources */,
 				EE4FE1B923F5F5F900DD340E /* Assets.xcassets in Resources */,
 				EE4FE1B723F5F5F800DD340E /* Main.storyboard in Resources */,
 			);
@@ -209,7 +240,11 @@
 			files = (
 				EE4FE1B423F5F5F800DD340E /* ViewController.swift in Sources */,
 				EE4FE1B023F5F5F800DD340E /* AppDelegate.swift in Sources */,
+				EE4FE1CA23F5F77B00DD340E /* FirebaseStudentRepository.swift in Sources */,
+				EE4FE1C923F5F77B00DD340E /* Repository.swift in Sources */,
 				EE4FE1B223F5F5F800DD340E /* SceneDelegate.swift in Sources */,
+				EE4FE1CC23F5F78200DD340E /* Student.swift in Sources */,
+				EE4FE1C823F5F77B00DD340E /* RealmStudentRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

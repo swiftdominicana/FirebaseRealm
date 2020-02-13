@@ -19,7 +19,7 @@ class ViewController: UIViewController {
   
   @IBOutlet var removeButton: UIButton!
   private let DATA_KEY = "DATA_KEY"
-  private let repository = RealmStudentRepository()
+  private let repository = FirebaseStudentRepository()
   
   override func viewDidLoad() {
     super.viewDidLoad()

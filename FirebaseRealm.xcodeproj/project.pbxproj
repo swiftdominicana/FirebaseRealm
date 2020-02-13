@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291A552003148BA021D32035 /* Pods_FirebaseRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E94A76D65111C983C5B0D3 /* Pods_FirebaseRealm.framework */; };
 		EE4FE1B023F5F5F800DD340E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1AF23F5F5F800DD340E /* AppDelegate.swift */; };
 		EE4FE1B223F5F5F800DD340E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1B123F5F5F800DD340E /* SceneDelegate.swift */; };
 		EE4FE1B423F5F5F800DD340E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1B323F5F5F800DD340E /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2896E4A88D540E7F659546D0 /* Pods-FirebaseRealm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseRealm.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseRealm/Pods-FirebaseRealm.debug.xcconfig"; sourceTree = "<group>"; };
+		34E94A76D65111C983C5B0D3 /* Pods_FirebaseRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8561417074E00A3A29F4955 /* Pods-FirebaseRealm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseRealm.release.xcconfig"; path = "Target Support Files/Pods-FirebaseRealm/Pods-FirebaseRealm.release.xcconfig"; sourceTree = "<group>"; };
 		EE4FE1AC23F5F5F800DD340E /* FirebaseRealm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseRealm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE4FE1AF23F5F5F800DD340E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE4FE1B123F5F5F800DD340E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				291A552003148BA021D32035 /* Pods_FirebaseRealm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AE458E4287691D44094E359 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2896E4A88D540E7F659546D0 /* Pods-FirebaseRealm.debug.xcconfig */,
+				E8561417074E00A3A29F4955 /* Pods-FirebaseRealm.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		286521C63750D218E03FF4D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34E94A76D65111C983C5B0D3 /* Pods_FirebaseRealm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EE4FE1A323F5F5F800DD340E = {
 			isa = PBXGroup;
 			children = (
 				EE4FE1AE23F5F5F800DD340E /* FirebaseRealm */,
 				EE4FE1AD23F5F5F800DD340E /* Products */,
+				1AE458E4287691D44094E359 /* Pods */,
+				286521C63750D218E03FF4D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE4FE1C023F5F5F900DD340E /* Build configuration list for PBXNativeTarget "FirebaseRealm" */;
 			buildPhases = (
+				048ACAA8D9B610D902502A4E /* [CP] Check Pods Manifest.lock */,
 				EE4FE1A823F5F5F800DD340E /* Sources */,
 				EE4FE1A923F5F5F800DD340E /* Frameworks */,
 				EE4FE1AA23F5F5F800DD340E /* Resources */,
+				6BCCA560F3C41AD9BB0B0252 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		048ACAA8D9B610D902502A4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FirebaseRealm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BCCA560F3C41AD9BB0B0252 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirebaseRealm/Pods-FirebaseRealm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirebaseRealm/Pods-FirebaseRealm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirebaseRealm/Pods-FirebaseRealm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE4FE1A823F5F5F800DD340E /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		EE4FE1C123F5F5F900DD340E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2896E4A88D540E7F659546D0 /* Pods-FirebaseRealm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		EE4FE1C223F5F5F900DD340E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8561417074E00A3A29F4955 /* Pods-FirebaseRealm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

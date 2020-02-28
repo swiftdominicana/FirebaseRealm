@@ -11,7 +11,7 @@ import Foundation
 protocol Repository {
   associatedtype EntityObject: RemoteEntity
   
-  func getFirst(id: Any, completion:@escaping (_ snapshot: Student?) -> Void)
+  func getFirst(id: Any, completion:@escaping (_ snapshot: EntityObject?) -> Void)
   func add(object: EntityObject) -> String?
   func remove(object: EntityObject, key: Any)
   func update(object: EntityObject, key: Any)

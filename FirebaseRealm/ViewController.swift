@@ -19,12 +19,10 @@ class ViewController: UIViewController {
   
   @IBOutlet var removeButton: UIButton!
   private let DATA_KEY = "DATA_KEY"
-  private let repository = FirebaseStudentRepository()
+  private let repository = CoreDataStudentRepository()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
-    
     loadStudent()
   }
   
@@ -40,7 +38,7 @@ class ViewController: UIViewController {
     guard
       let rawAge = ageTextField.text,
       let age = Int(rawAge) else {
-      return nil
+        return nil
     }
     
     return Student(name: name, lastname: lastname, age: age)
@@ -83,8 +81,9 @@ class ViewController: UIViewController {
     }
     
     if let student = getStudent() {
+      UserDefaults.standard.removeObject(forKey: DATA_KEY)
+      print("Key: \( UserDefaults.standard.value(forKey: DATA_KEY) ?? "none")")
       repository.remove(object: student, key: key)
-      UserDefaults.standard.set(nil, forKey: DATA_KEY)
       saveButton.isHidden = false
       updateButton.isHidden = true
       removeButton.isHidden = true
@@ -103,13 +102,19 @@ class ViewController: UIViewController {
     }
     
     repository.getFirst(id: key) { [weak self] (student) in
-      if let student = student {
-        self?.nameTextField.text = student.name
-        self?.lastnameTextField.text = student.lastname
-        self?.ageTextField.text = String(student.age)
-        self?.saveButton.isHidden = true
-        self?.updateButton.isHidden = false
-        self?.removeButton.isHidden = false
+      guard let self = self else {
+        return
+      }
+      
+      DispatchQueue.main.async {
+        if let student = student {
+          self.nameTextField.text = student.name
+          self.lastnameTextField.text = student.lastname
+          self.ageTextField.text = String(student.age)
+          self.saveButton.isHidden = true
+          self.updateButton.isHidden = false
+          self.removeButton.isHidden = false
+        }
       }
     }
   }

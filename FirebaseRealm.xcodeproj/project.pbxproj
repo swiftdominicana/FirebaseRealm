@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		291A552003148BA021D32035 /* Pods_FirebaseRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E94A76D65111C983C5B0D3 /* Pods_FirebaseRealm.framework */; };
+		EE12043B24089ACF00CBEE7F /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE12043924089ACF00CBEE7F /* Database.xcdatamodeld */; };
+		EE12043D24089B3500CBEE7F /* CoreDataStudentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE12043C24089B3500CBEE7F /* CoreDataStudentRepository.swift */; };
 		EE4FE1B023F5F5F800DD340E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1AF23F5F5F800DD340E /* AppDelegate.swift */; };
 		EE4FE1B223F5F5F800DD340E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1B123F5F5F800DD340E /* SceneDelegate.swift */; };
 		EE4FE1B423F5F5F800DD340E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1B323F5F5F800DD340E /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 		2896E4A88D540E7F659546D0 /* Pods-FirebaseRealm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseRealm.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseRealm/Pods-FirebaseRealm.debug.xcconfig"; sourceTree = "<group>"; };
 		34E94A76D65111C983C5B0D3 /* Pods_FirebaseRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8561417074E00A3A29F4955 /* Pods-FirebaseRealm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseRealm.release.xcconfig"; path = "Target Support Files/Pods-FirebaseRealm/Pods-FirebaseRealm.release.xcconfig"; sourceTree = "<group>"; };
+		EE12043A24089ACF00CBEE7F /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
+		EE12043C24089B3500CBEE7F /* CoreDataStudentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStudentRepository.swift; sourceTree = "<group>"; };
 		EE4FE1AC23F5F5F800DD340E /* FirebaseRealm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseRealm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE4FE1AF23F5F5F800DD340E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE4FE1B123F5F5F800DD340E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE12043824089AB400CBEE7F /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				EE12043924089ACF00CBEE7F /* Database.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		EE4FE1A323F5F5F800DD340E = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +102,7 @@
 		EE4FE1AE23F5F5F800DD340E /* FirebaseRealm */ = {
 			isa = PBXGroup;
 			children = (
+				EE12043824089AB400CBEE7F /* Core Data */,
 				EE4FE1CF23F5F8C300DD340E /* GoogleService-Info.plist */,
 				EE4FE1C423F5F76A00DD340E /* Repositories */,
 				EE4FE1C323F5F76200DD340E /* Models */,
@@ -118,6 +131,7 @@
 				EE4FE1C623F5F77B00DD340E /* Repository.swift */,
 				EE4FE1C723F5F77B00DD340E /* FirebaseStudentRepository.swift */,
 				EE4FE1C523F5F77B00DD340E /* RealmStudentRepository.swift */,
+				EE12043C24089B3500CBEE7F /* CoreDataStudentRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -240,11 +254,13 @@
 			files = (
 				EE4FE1B423F5F5F800DD340E /* ViewController.swift in Sources */,
 				EE4FE1B023F5F5F800DD340E /* AppDelegate.swift in Sources */,
+				EE12043B24089ACF00CBEE7F /* Database.xcdatamodeld in Sources */,
 				EE4FE1CA23F5F77B00DD340E /* FirebaseStudentRepository.swift in Sources */,
 				EE4FE1C923F5F77B00DD340E /* Repository.swift in Sources */,
 				EE4FE1B223F5F5F800DD340E /* SceneDelegate.swift in Sources */,
 				EE4FE1CC23F5F78200DD340E /* Student.swift in Sources */,
 				EE4FE1C823F5F77B00DD340E /* RealmStudentRepository.swift in Sources */,
+				EE12043D24089B3500CBEE7F /* CoreDataStudentRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +460,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EE12043924089ACF00CBEE7F /* Database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EE12043A24089ACF00CBEE7F /* Database.xcdatamodel */,
+			);
+			currentVersion = EE12043A24089ACF00CBEE7F /* Database.xcdatamodel */;
+			path = Database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EE4FE1A423F5F5F800DD340E /* Project object */;
 }
